@@ -4,7 +4,20 @@ import { getStream } from "@/actions/getStream";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
+import { intervalToDuration } from "date-fns";
 import { BadgeCheck, Clock, Users } from "lucide-react";
+import { useEffect, useState } from "react";
+
+function convertTime(seconds: number) {
+  const start = new Date(0); // エポック
+  const end = new Date(seconds * 1000); // 秒数をミリ秒に変換
+
+  const duration = intervalToDuration({ start, end });
+
+  return `${duration.hours?.toString().padStart(2, "0") ?? "00"}:${
+    duration.minutes?.toString().padStart(2, "0") ?? "00"
+  }:${duration.seconds?.toString().padStart(2, "0") ?? "00"}`;
+}
 
 export function VideoMetadata() {
   const { data } = useQuery({
@@ -13,6 +26,21 @@ export function VideoMetadata() {
       getStream("arn:aws:ivs:ap-northeast-1:269083170508:channel/g57VkI5uIIzn"),
     refetchInterval: 10000,
   });
+
+  const [currentTime, setCurrentTime] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const startTime = data?.stream?.startTime;
+      const currentTime = Math.floor(
+        (Date.now() - (startTime?.getTime() ?? 0)) / 1000
+      );
+      const convertedCurrentTime = convertTime(currentTime);
+      setCurrentTime(convertedCurrentTime);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [setCurrentTime, data]);
 
   return (
     <div className="p-4 border-b md:border md:rounded-lg md:m-4">
@@ -34,7 +62,7 @@ export function VideoMetadata() {
           </div>
         </div>
         <div className="flex items-center space-x-4 mt-2 md:mt-0">
-          {data?.stream?.viewerCount && (
+          {data?.stream?.viewerCount !== undefined && (
             <div className="flex items-center space-x-1">
               <Users className="w-4 h-4" />
               <span className="text-sm font-medium">
@@ -42,10 +70,12 @@ export function VideoMetadata() {
               </span>
             </div>
           )}
-          <div className="flex items-center space-x-1">
-            <Clock className="w-4 h-4" />
-            <span className="text-sm font-medium">3:06:40</span>
-          </div>
+          {data?.stream?.startTime !== undefined && (
+            <div className="flex items-center space-x-1">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm font-medium">{currentTime}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>
