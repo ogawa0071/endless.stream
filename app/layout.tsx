@@ -1,3 +1,4 @@
+import { QueryClientContext } from "@/components/QueryClientContext";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -21,7 +22,9 @@ export default function RootLayout({
         <script src="https://player.live-video.net/1.33.0/amazon-ivs-videojs-tech.min.js"></script>
         <script src="https://player.live-video.net/1.33.0/amazon-ivs-quality-plugin.min.js"></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <QueryClientContext>{children}</QueryClientContext>
+      </body>
     </html>
   );
 }
