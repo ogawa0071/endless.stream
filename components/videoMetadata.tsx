@@ -65,7 +65,7 @@ export function VideoMetadata() {
           {data?.stream?.viewerCount !== undefined && (
             <div className="flex items-center space-x-1">
               <Users className="w-4 h-4" />
-              <span className="text-sm font-medium">
+              <span className="text-sm font-medium tabular-nums">
                 {data?.stream?.viewerCount}
               </span>
             </div>
@@ -73,7 +73,9 @@ export function VideoMetadata() {
           {data?.stream?.startTime !== undefined && (
             <div className="flex items-center space-x-1">
               <Clock className="w-4 h-4" />
-              <span className="text-sm font-medium">{currentTime}</span>
+              <span className="text-sm font-medium tabular-nums">
+                {currentTime}
+              </span>
             </div>
           )}
         </div>

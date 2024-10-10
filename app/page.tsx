@@ -1,4 +1,5 @@
 import { Chat } from "@/components/chat";
+import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
 import { Video } from "@/components/video";
 import { VideoMetadata } from "@/components/videoMetadata";
@@ -12,7 +13,9 @@ export default function Component() {
           <Video />
           <VideoMetadata />
         </div>
-        <Chat />
+        <ClientOnly>
+          <Chat />
+        </ClientOnly>
       </div>
     </div>
   );

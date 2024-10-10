@@ -1,41 +1,103 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { useChatRoom } from "@/hooks/useChatRoom";
+import { useLocalStorage } from "@uidotdev/usehooks";
+import { ChatMessage } from "amazon-ivs-chat-messaging";
 import { Send } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Chat() {
+  const [userId, setUserId] = useLocalStorage("userId", "匿名");
+  const [userIdInput, setUserIdInput] = useState(
+    userId === "匿名" ? "" : userId
+  );
+  const { room } = useChatRoom(userId);
+  const [inputMessage, setInputMessage] = useState("");
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+
+  const handleMessages = async () => {
+    if (room) {
+      await room.sendMessage({
+        content: inputMessage,
+        action: "SEND_MESSAGE",
+        requestId: crypto.randomUUID(),
+      });
+
+      setInputMessage("");
+    }
+  };
+
+  useEffect(() => {
+    if (room) {
+      const unsubscribeOnMessageReceived = room.addListener(
+        "message",
+        (message) => {
+          setMessages((msgs) => [...msgs, message]);
+        }
+      );
+
+      return () => {
+        unsubscribeOnMessageReceived();
+      };
+    }
+  }, [room]);
+
   return (
     <div className="md:w-1/4 md:border-l flex flex-col h-[50vh] md:h-auto">
       <ScrollArea className="flex-1">
         <div className="p-4">
           <h3 className="text-lg font-semibold mb-4">チャット</h3>
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className="mb-4">
-              <div className="flex items-center space-x-2">
-                <Avatar className="w-6 h-6">
-                  <AvatarFallback>{`U${i + 1}`}</AvatarFallback>
-                </Avatar>
-                <span className="font-medium">ユーザー{i + 1}</span>
+          {messages.map((message) => (
+            <div key={message.id} className="mb-2">
+              <div className="flex flex-wrap items-center space-x-2 break-all">
+                <span className="font-medium text-sm text-blue-500">
+                  {message.sender.userId}:
+                </span>
+                <p className="text-sm">{message.content}</p>
               </div>
-              <p className="mt-1 text-sm text-gray-600">
-                これはコメント{i + 1}
-                です。配信についての感想や質問が表示されます。
-              </p>
               <Separator className="mt-2" />
             </div>
           ))}
         </div>
       </ScrollArea>
       <div className="p-4 border-t">
+        <div className="flex space-x-2 mb-4">
+          <Input
+            placeholder="ユーザー名"
+            className="flex-1"
+            onChange={(e) => setUserIdInput(e.target.value)}
+            value={userIdInput}
+          />
+          <Button
+            onClick={() => {
+              setUserId(userIdInput ? userIdInput : "匿名");
+            }}
+          >
+            保存
+          </Button>
+        </div>
         <div className="flex space-x-2">
           <Input
             placeholder="メッセージを入力..."
             className="flex-1"
             aria-label="メッセージを入力"
+            onChange={(e) => setInputMessage(e.target.value)}
+            value={inputMessage}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+                handleMessages();
+              }
+            }}
           />
-          <Button size="icon" aria-label="メッセージを送信">
+          <Button
+            size="icon"
+            aria-label="メッセージを送信"
+            onClick={handleMessages}
+          >
             <Send className="h-4 w-4" />
           </Button>
         </div>
