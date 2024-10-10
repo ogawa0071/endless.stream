@@ -1,9 +1,9 @@
-import { QueryClientContext } from "@/components/QueryClientContext";
+import { QueryClientContext } from "@/components/queryClientContext";
 import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "newstream",
+  title: "endless.stream",
 };
 
 export default function RootLayout({
@@ -18,8 +18,11 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video-js.css"
           rel="stylesheet"
         />
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video.min.js"></script>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="https://player.live-video.net/1.33.0/amazon-ivs-videojs-tech.min.js"></script>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="https://player.live-video.net/1.33.0/amazon-ivs-quality-plugin.min.js"></script>
       </head>
       <body>
