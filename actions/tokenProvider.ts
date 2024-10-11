@@ -9,6 +9,10 @@ const client = new IvschatClient({
 });
 
 export async function tokenProvider(roomIdentifier: string, userId: string) {
+  if (userId.length > 10) {
+    throw new Error("userId must be less than 10 characters");
+  }
+
   const command = new CreateChatTokenCommand({
     roomIdentifier,
     userId,

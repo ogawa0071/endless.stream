@@ -73,6 +73,7 @@ export function Chat() {
             value={userIdInput}
           />
           <Button
+            disabled={userIdInput.length > 10}
             onClick={() => {
               setUserId(userIdInput ? userIdInput : "匿名");
             }}
@@ -80,6 +81,11 @@ export function Chat() {
             保存
           </Button>
         </div>
+        {userIdInput.length > 10 && (
+          <div>
+            <p className="text-red-500 text-sm">10文字以内で入力してください</p>
+          </div>
+        )}
         <div className="flex space-x-2">
           <Input
             placeholder="メッセージを入力..."
