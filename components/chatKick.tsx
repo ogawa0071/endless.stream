@@ -15,7 +15,16 @@ export function Chat() {
           <AlertCircle className="h-4 w-4" />
           <AlertTitle className="font-bold">コメントはできません</AlertTitle>
           <AlertDescription>
-            このページではKickにログインしてもエラーになりますので、コメントはできません。
+            このページではエラーになりKickにログインできませんので、コメントはできません。
+            <br />
+            <a
+              href="https://kick.com/oechan"
+              target="_blank"
+              className="underline"
+            >
+              KickのWebサイト
+            </a>
+            でコメントを投稿してください。
           </AlertDescription>
         </Alert>
       </div>
