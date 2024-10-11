@@ -14,7 +14,7 @@ export const revalidate = 10;
 
 export async function GET() {
   const command = new GetStreamCommand({
-    channelArn: "arn:aws:ivs:ap-northeast-1:269083170508:channel/g57VkI5uIIzn",
+    channelArn: process.env.NEXT_PUBLIC_CHANNEL_ID,
   });
 
   try {

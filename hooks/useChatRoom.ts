@@ -10,10 +10,7 @@ export const useChatRoom = (userId: string) => {
     const room = new ChatRoom({
       regionOrUrl: "ap-northeast-1",
       tokenProvider: () =>
-        tokenProvider(
-          "arn:aws:ivschat:ap-northeast-1:269083170508:room/TRUvr5gJp3cv",
-          userId
-        ),
+        tokenProvider(process.env.NEXT_PUBLIC_CHATROOM_ID ?? "", userId),
     });
     setRoom(room);
 

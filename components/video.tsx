@@ -4,8 +4,7 @@ import { useEffect } from "react";
 
 export function Video() {
   useEffect(() => {
-    const DEFAULT_STREAM =
-      "https://030c7467f99a.ap-northeast-1.playback.live-video.net/api/video/v1/ap-northeast-1.269083170508.channel.g57VkI5uIIzn.m3u8";
+    const DEFAULT_STREAM = process.env.NEXT_PUBLIC_STREAM_URL;
 
     // Set up IVS playback tech and quality plugin
     // @ts-expect-error: error
