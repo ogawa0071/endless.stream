@@ -4,6 +4,7 @@ import {
   AudioTrack,
   LiveKitRoom,
   RoomAudioRenderer,
+  StartAudio,
   useTracks,
   VideoTrack,
 } from "@livekit/components-react";
@@ -23,6 +24,7 @@ function CityVideoRenderer() {
           <VideoTrack trackRef={tokyoCamTrackRef} />
           <AudioTrack trackRef={tokyoCamTrackRef} muted={false} volume={1} />
           <RoomAudioRenderer />
+          <StartAudio label="ここをクリックすると音が出ます" />
         </>
       ) : (
         <div className="w-full aspect-video bg-gray-800 flex items-center justify-center">
