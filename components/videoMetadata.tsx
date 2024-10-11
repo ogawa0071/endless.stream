@@ -22,7 +22,7 @@ export function VideoMetadata() {
   const { data } = useQuery({
     queryKey: ["getStream"],
     queryFn: () => fetch("/api/getStream").then((res) => res.json()),
-    refetchInterval: 1000,
+    refetchInterval: 10000,
   });
 
   const [currentTime, setCurrentTime] = useState("");
