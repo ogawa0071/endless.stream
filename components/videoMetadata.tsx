@@ -1,6 +1,5 @@
 "use client";
 
-import { getStream } from "@/actions/getStream";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
@@ -23,7 +22,9 @@ export function VideoMetadata() {
   const { data } = useQuery({
     queryKey: ["getStream"],
     queryFn: () =>
-      getStream("arn:aws:ivs:ap-northeast-1:269083170508:channel/g57VkI5uIIzn"),
+      fetch(
+        "/api/getStream?channelArn=arn:aws:ivs:ap-northeast-1:269083170508:channel/g57VkI5uIIzn"
+      ).then((res) => res.json()),
     refetchInterval: 10000,
   });
 
