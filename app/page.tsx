@@ -1,4 +1,4 @@
-import { Chat } from "@/components/chatDisabled";
+import { Chat } from "@/components/chatKick";
 import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
 import { Video } from "@/components/video";
