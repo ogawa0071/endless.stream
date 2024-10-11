@@ -1,6 +1,12 @@
 "use client";
 
-import { LiveKitRoom, useTracks, VideoTrack } from "@livekit/components-react";
+import {
+  AudioTrack,
+  LiveKitRoom,
+  RoomAudioRenderer,
+  useTracks,
+  VideoTrack,
+} from "@livekit/components-react";
 import { Track } from "livekit-client";
 import { useEffect, useState } from "react";
 
@@ -13,7 +19,11 @@ function CityVideoRenderer() {
   return (
     <>
       {tokyoCamTrackRef ? (
-        <VideoTrack trackRef={tokyoCamTrackRef} />
+        <>
+          <VideoTrack trackRef={tokyoCamTrackRef} />
+          <AudioTrack trackRef={tokyoCamTrackRef} muted={false} volume={1} />
+          <RoomAudioRenderer />
+        </>
       ) : (
         <div className="w-full aspect-video bg-gray-800 flex items-center justify-center">
           <span className="text-white text-2xl">配信していません</span>
