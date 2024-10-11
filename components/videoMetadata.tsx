@@ -21,10 +21,7 @@ function convertTime(seconds: number) {
 export function VideoMetadata() {
   const { data } = useQuery({
     queryKey: ["getStream"],
-    queryFn: () =>
-      fetch(
-        "/api/getStream?channelArn=arn:aws:ivs:ap-northeast-1:269083170508:channel/g57VkI5uIIzn"
-      ).then((res) => res.json()),
+    queryFn: () => fetch("/api/getStream").then((res) => res.json()),
     refetchInterval: 10000,
   });
 
