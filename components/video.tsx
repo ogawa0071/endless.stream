@@ -82,7 +82,7 @@ export function Video() {
       videoJSPlayer.enableIVSQualityPlugin();
 
       // Set volume and play default stream
-      videoJSPlayer.volume(0);
+      videoJSPlayer.volume(1);
       videoJSPlayer.src(DEFAULT_STREAM);
     };
 

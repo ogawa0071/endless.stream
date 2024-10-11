@@ -31,7 +31,7 @@ export function VideoMetadata() {
     const interval = setInterval(() => {
       const startTime = data?.stream?.startTime;
       const currentTime = Math.floor(
-        (Date.now() - (startTime?.getTime() ?? 0)) / 1000
+        (Date.now() - (new Date(startTime)?.getTime() ?? 0)) / 1000
       );
       const convertedCurrentTime = convertTime(currentTime);
       setCurrentTime(convertedCurrentTime);
