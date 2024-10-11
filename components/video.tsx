@@ -94,7 +94,7 @@ export function Video() {
     <div className="video-container">
       <video
         id="amazon-ivs-videojs"
-        className="video-js vjs-4-3 vjs-big-play-centered"
+        className="video-js vjs-16-9 vjs-big-play-centered"
         controls
         autoPlay
         playsInline
