@@ -23,6 +23,16 @@ export function VideoMetadata() {
         ※18歳未満の方の視聴は禁止です。
         <br />
         <br />
+        ミラー配信先:{" "}
+        <a
+          href="https://housoshitu.live/"
+          target="_blank"
+          className="underline"
+        >
+          Open放送室
+        </a>
+        <br />
+        <br />
         ゲームタイトル:
         『抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？』
         <br />
