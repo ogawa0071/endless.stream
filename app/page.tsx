@@ -1,7 +1,7 @@
 import { Chat } from "@/components/chatKick";
 import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
-import { Video } from "@/components/videoAgora";
+import { Video } from "@/components/videoLiveKit";
 import { VideoMetadata } from "@/components/videoMetadataNoServer";
 
 export default function Component() {

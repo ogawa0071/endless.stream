@@ -19,6 +19,28 @@ export function VideoMetadata() {
           </div>
         </div>
       </div>
+      <div className="pl-16">
+        ※18歳未満の方の視聴は禁止です。
+        <br />
+        <br />
+        ゲームタイトル:
+        『抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？』
+        <br />
+        <br />
+        公式サイト:{" "}
+        <a
+          href="https://qruppo.com/products/nukitashi/"
+          target="_blank"
+          className="underline"
+        >
+          https://qruppo.com/products/nukitashi/
+        </a>
+        <br />
+        Twitter:{" "}
+        <a href="https://x.com/qruppo" target="_blank" className="underline">
+          https://x.com/qruppo
+        </a>
+      </div>
     </div>
   );
 }
