@@ -1,8 +1,8 @@
-import { Chat } from "@/components/chatKick";
 import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
-import { Video } from "@/components/videoLiveKit";
+import { Video } from "@/components/videoCloudflareStream";
 import { VideoMetadata } from "@/components/videoMetadata";
+import { Chat } from "@livekit/components-react";
 
 export default function Component() {
   return (
