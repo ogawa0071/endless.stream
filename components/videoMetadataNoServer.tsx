@@ -23,7 +23,7 @@ export function VideoMetadata() {
         ※18歳未満の方の視聴は禁止です。
         <br />
         <br />
-        ミラー配信先:{" "}
+        ミラー配信先（満員時はこちらで視聴可能）:{" "}
         <a
           href="https://housoshitu.live/"
           target="_blank"
