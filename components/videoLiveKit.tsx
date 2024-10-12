@@ -21,12 +21,25 @@ function CityVideoRenderer() {
     (trackRef) => trackRef.participant.name === "test"
   );
 
+  useEffect(() => {
+    const el = document.querySelector(".lk-participant-media-video");
+
+    // videoタグにcontrols属性を追加
+    if (el) {
+      el.setAttribute("controls", "true");
+    }
+  }, [tokyoCamTrackRef, tokyoAudioTrackRef]);
+
   return (
     <>
       {tokyoCamTrackRef ? (
         <>
           <VideoTrack trackRef={tokyoCamTrackRef} />
-          <AudioTrack trackRef={tokyoAudioTrackRef} muted={false} volume={1} />
+          <AudioTrack
+            trackRef={tokyoAudioTrackRef}
+            muted={false}
+            volume={0.5}
+          />
           <StartAudio label="ここをクリックすると音が出ます" />
         </>
       ) : (
