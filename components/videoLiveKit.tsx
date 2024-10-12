@@ -32,7 +32,7 @@ function CityVideoRenderer() {
 
   return (
     <>
-      {tokyoCamTrackRef ? (
+      {tokyoCamTrackRef && tokyoAudioTrackRef ? (
         <>
           <VideoTrack trackRef={tokyoCamTrackRef} />
           <AudioTrack
