@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   AudioTrack,
   LiveKitRoom,
-  RoomAudioRenderer,
   StartAudio,
   useTracks,
   VideoTrack,
@@ -14,7 +13,11 @@ import { useEffect, useState } from "react";
 
 function CityVideoRenderer() {
   const trackRefs = useTracks([Track.Source.Camera]);
+  const trackAudioRefs = useTracks([Track.Source.Microphone]);
   const tokyoCamTrackRef = trackRefs.find(
+    (trackRef) => trackRef.participant.name === "test"
+  );
+  const tokyoAudioTrackRef = trackAudioRefs.find(
     (trackRef) => trackRef.participant.name === "test"
   );
 
@@ -23,8 +26,7 @@ function CityVideoRenderer() {
       {tokyoCamTrackRef ? (
         <>
           <VideoTrack trackRef={tokyoCamTrackRef} />
-          <AudioTrack trackRef={tokyoCamTrackRef} muted={false} volume={1} />
-          <RoomAudioRenderer />
+          <AudioTrack trackRef={tokyoAudioTrackRef} muted={false} volume={1} />
           <StartAudio label="ここをクリックすると音が出ます" />
         </>
       ) : (
