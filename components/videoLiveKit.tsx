@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   AudioTrack,
   LiveKitRoom,
@@ -39,31 +40,48 @@ export function Video() {
   // TODO: get user input for room and name
   const room = "quickstart-room";
   const [token, setToken] = useState("");
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     (async () => {
-      try {
-        const resp = await fetch(`/api/get-participant-token?room=${room}`);
-        const data = await resp.json();
-        setToken(data.token);
-      } catch (e) {
-        console.error(e);
+      if (start) {
+        try {
+          const resp = await fetch(`/api/get-participant-token?room=${room}`);
+          const data = await resp.json();
+          setToken(data.token);
+        } catch (e) {
+          console.error(e);
+        }
       }
     })();
-  }, []);
-
-  if (token === "") {
-    return <div>Getting token...</div>;
-  }
+  }, [start]);
 
   return (
     <div>
-      <LiveKitRoom
-        token={token}
-        serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
-      >
-        <CityVideoRenderer />
-      </LiveKitRoom>
+      {start === false && (
+        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col">
+          <div className="text-white text-2xl">配信していません</div>
+          <div>
+            <Button variant="secondary" onClick={() => setStart(true)}>
+              配信を見る（配信されていない状態でクリックしても意味ありません）
+            </Button>
+          </div>
+        </div>
+      )}
+      {start === true && token === "" && (
+        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col">
+          <div className="text-white text-2xl">配信していません</div>
+          <div>データを取得中...</div>
+        </div>
+      )}
+      {start === true && token !== "" && (
+        <LiveKitRoom
+          token={token}
+          serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
+        >
+          <CityVideoRenderer />
+        </LiveKitRoom>
+      )}
     </div>
   );
 }
