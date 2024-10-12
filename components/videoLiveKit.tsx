@@ -59,12 +59,17 @@ export function Video() {
   return (
     <div>
       {start === false && (
-        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col">
+        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4">
           <div className="text-white text-2xl">配信していません</div>
           <div>
             <Button variant="secondary" onClick={() => setStart(true)}>
-              配信を見る（配信されていない状態でクリックしても意味ありません）
+              配信を見る
             </Button>
+          </div>
+          <div className="text-white text-xs text-center">
+            上記ボタンは配信されていない状態でクリックしても意味ありません。
+            <br />
+            サーバー代が無駄にかかってしまう可能性があるので、配信開始までクリックしないでいただけますとありがたいです🙏
           </div>
         </div>
       )}
