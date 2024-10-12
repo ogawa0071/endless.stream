@@ -12,6 +12,7 @@
     "@aws-sdk/client-ivs": "^3.668.0",
     "@aws-sdk/client-ivschat": "^3.668.0",
     "@aws-sdk/credential-providers": "^3.668.0",
+    "@cloudflare/stream-react": "^1.9.1",
     "@eyevinn/webrtc-player": "^0.13.0",
     "@hookform/resolvers": "^3.9.0",
     "@livekit/components-react": "^2.6.5",
