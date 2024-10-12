@@ -10,7 +10,7 @@ export function Chat() {
         src="https://kick.com/popout/oechan/chat"
         className="h-[100vh]"
       ></iframe>
-      <div className="p-4">
+      <div className="p-4 hidden sm:block">
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertTitle className="font-bold">コメントはできません</AlertTitle>
