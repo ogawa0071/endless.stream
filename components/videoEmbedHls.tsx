@@ -6,6 +6,7 @@ export function Video({ src }: { src: string }) {
       <iframe
         src={`https://www.hlsplayer.net/embed?type=m3u8&src=${src}`}
         className="w-full h-full"
+        allow="fullscreen; picture-in-picture"
       />
     </AspectRatio>
   );
