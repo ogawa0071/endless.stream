@@ -3,11 +3,17 @@ import { AccessToken } from "livekit-server-sdk";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const livekitStatus = await get("livekit-status");
+  try {
+    const livekitStatus = await get("livekit-status");
 
-  if (process.env.VERCEL_ENV === "production" && livekitStatus === false) {
-    return NextResponse.json({ error: "LiveKit is disabled" }, { status: 503 });
-  }
+    if (livekitStatus === false) {
+      return NextResponse.json(
+        { error: "LiveKit is disabled" },
+        { status: 503 }
+      );
+    }
+    // eslint-disable-next-line
+  } catch (error) {}
 
   const room = req.nextUrl.searchParams.get("room");
   const username = crypto.randomUUID();
