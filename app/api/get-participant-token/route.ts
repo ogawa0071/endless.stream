@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   const livekitStatus = await get("livekit-status");
 
-  if (livekitStatus === false) {
+  if (process.env.VERCEL_ENV === "production" && livekitStatus === false) {
     return NextResponse.json({ error: "LiveKit is disabled" }, { status: 503 });
   }
 
