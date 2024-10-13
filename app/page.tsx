@@ -14,8 +14,8 @@ export default function Page() {
           <ClientOnly>
             <Video />
           </ClientOnly>
-          <VideoMetadata />
           <Archive />
+          <VideoMetadata />
         </div>
         <ClientOnly>
           <Chat />

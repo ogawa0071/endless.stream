@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "endless.stream",
+  title: "Endless Stream（エンスト）",
 };
 
 export default function RootLayout({
