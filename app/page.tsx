@@ -4,7 +4,7 @@ import { Header } from "@/components/header";
 import { Video } from "@/components/videoLiveKit";
 import { VideoMetadata } from "@/components/videoMetadataNoServer";
 
-export default function Component() {
+export default function Page() {
   return (
     <div className="flex flex-col h-screen bg-background">
       <Header />

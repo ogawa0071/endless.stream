@@ -13,18 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <head>
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video-js.css"
-          rel="stylesheet"
-        />
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video.min.js"></script>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://player.live-video.net/1.33.0/amazon-ivs-videojs-tech.min.js"></script>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="https://player.live-video.net/1.33.0/amazon-ivs-quality-plugin.min.js"></script>
-      </head>
       <body>
         <QueryClientContext>{children}</QueryClientContext>
       </body>
