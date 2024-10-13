@@ -1,4 +1,4 @@
-import { Archive } from "@/components/Archive";
+import { Archive } from "@/components/archive";
 import { Chat } from "@/components/chatKick";
 import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
