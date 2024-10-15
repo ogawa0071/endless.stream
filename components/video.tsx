@@ -27,7 +27,6 @@ export function Video() {
     // Use the player API once the player instance's ready callback is fired
     const readyCallback = function () {
       // This executes after video.js is initialized and ready
-      // @ts-expect-error: error
       window.videoJSPlayer = videoJSPlayer;
 
       // Get reference to Amazon IVS player
