@@ -1,4 +1,5 @@
 import { QueryClientContext } from "@/components/queryClientContext";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html>
       <body>
         <QueryClientContext>{children}</QueryClientContext>
+        <GoogleAnalytics gaId="G-DRKJRNE9Z3" />
       </body>
     </html>
   );
