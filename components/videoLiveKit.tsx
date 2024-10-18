@@ -15,10 +15,10 @@ function CityVideoRenderer() {
   const trackRefs = useTracks([Track.Source.Camera]);
   const trackAudioRefs = useTracks([Track.Source.Microphone]);
   const tokyoCamTrackRef = trackRefs.find(
-    (trackRef) => trackRef.participant.name === "test"
+    (trackRef) => trackRef.participant.name === "obs"
   );
   const tokyoAudioTrackRef = trackAudioRefs.find(
-    (trackRef) => trackRef.participant.name === "test"
+    (trackRef) => trackRef.participant.name === "obs"
   );
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function CityVideoRenderer() {
 
 export function Video() {
   // TODO: get user input for room and name
-  const room = "quickstart-room";
+  const room = "my-first-room";
   const [token, setToken] = useState("");
   const [start, setStart] = useState(false);
 
