@@ -4,9 +4,19 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { useRoomContext } from "@livekit/components-react";
 import { BadgeCheck, Users } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function VideoMetadata() {
   const room = useRoomContext();
+  const [numParticipants, setNumParticipants] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNumParticipants(room.numParticipants);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [room]);
 
   return (
     <div className="p-4 border-b md:border md:rounded-lg md:m-4">
@@ -31,7 +41,7 @@ export function VideoMetadata() {
           <div className="flex items-center space-x-1">
             <Users className="w-4 h-4" />
             <span className="text-sm font-medium tabular-nums">
-              {room.numParticipants}
+              {numParticipants}
             </span>
           </div>
         </div>
