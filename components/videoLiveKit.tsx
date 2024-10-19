@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Slider } from "@/components/ui/slider";
 import {
   AudioTrack,
   LiveKitRoom,
@@ -9,6 +10,7 @@ import {
   VideoTrack,
 } from "@livekit/components-react";
 import { Track } from "livekit-client";
+import { Volume2, VolumeOff } from "lucide-react";
 import { useEffect, useState } from "react";
 import { VideoMetadata } from "./videoMetadataLiveKit";
 import { VideoMetadata as VideoMetadataNoServer } from "./videoMetadataNoServer";
@@ -23,6 +25,9 @@ function CityVideoRenderer() {
     (trackRef) => trackRef.participant.name === "obs"
   );
 
+  const [volume, setVolume] = useState(1);
+  const [muted, setMuted] = useState(false);
+
   return (
     <>
       {tokyoCamTrackRef && tokyoAudioTrackRef ? (
@@ -30,9 +35,28 @@ function CityVideoRenderer() {
           <VideoTrack trackRef={tokyoCamTrackRef} controls />
           <AudioTrack
             trackRef={tokyoAudioTrackRef}
-            muted={false}
-            volume={0.5}
+            muted={muted}
+            volume={volume}
           />
+
+          <div className="mt-4 flex items-center gap-4 px-4">
+            <Button variant="ghost" onClick={() => setMuted((prev) => !prev)}>
+              {muted ? (
+                <VolumeOff className="h-5 w-5" />
+              ) : (
+                <Volume2 className="h-5 w-5" />
+              )}
+            </Button>
+            <Slider
+              className="w-full"
+              value={[volume]}
+              max={1}
+              step={0.1}
+              onValueChange={([value]) => setVolume(value)}
+            />
+            <span className="text-sm">{volume * 100}%</span>
+          </div>
+
           <StartAudio label="ここをクリックすると音が出ます" />
         </>
       ) : (
