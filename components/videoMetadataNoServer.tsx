@@ -6,7 +6,7 @@ import { BadgeCheck } from "lucide-react";
 export function VideoMetadata() {
   return (
     <div className="p-4 border-b md:border md:rounded-lg md:m-4">
-      <div className="flex flex-col md:flex-row md:items-center justify-between">
+      <div className="flex flex-row md:items-center justify-between">
         <div className="flex items-center space-x-4">
           <Avatar className="w-12 h-12">
             <AvatarImage src="/oechan.png" alt="oechan" />
@@ -19,7 +19,7 @@ export function VideoMetadata() {
           </div>
         </div>
       </div>
-      <div className="pl-16">
+      <div className="pt-4">
         ※18歳未満の方の視聴は禁止です。
         <br />
         <br />
