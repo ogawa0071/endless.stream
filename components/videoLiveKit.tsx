@@ -51,7 +51,7 @@ function CityVideoRenderer() {
               className="w-full"
               value={[volume]}
               max={1}
-              step={0.1}
+              step={0.05}
               onValueChange={([value]) => setVolume(value)}
             />
             <span className="text-sm">{volume * 100}%</span>
