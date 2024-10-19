@@ -54,7 +54,7 @@ function CityVideoRenderer() {
               step={0.05}
               onValueChange={([value]) => setVolume(value)}
             />
-            <span className="text-sm">{volume * 100}%</span>
+            <span className="text-sm">{Math.round(volume * 100)}%</span>
           </div>
 
           <StartAudio label="ここをクリックすると音が出ます" />
