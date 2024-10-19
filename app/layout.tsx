@@ -5,6 +5,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Endless Stream（エンスト）",
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({
