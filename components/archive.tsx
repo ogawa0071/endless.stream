@@ -27,10 +27,10 @@ function VideoCard() {
                 <Image src={nukitashi4} alt="" />
               </div>
               <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                2:39:40
+                7:12:39
               </div>
               <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                2024/10/19 20:29
+                2024/10/19 19:25
               </div>
             </div>
             <div className="p-4">
