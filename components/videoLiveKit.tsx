@@ -10,6 +10,8 @@ import {
 } from "@livekit/components-react";
 import { Track } from "livekit-client";
 import { useEffect, useState } from "react";
+import { VideoMetadata } from "./videoMetadataLiveKit";
+import { VideoMetadata as VideoMetadataNoServer } from "./videoMetadataNoServer";
 
 function CityVideoRenderer() {
   const trackRefs = useTracks([Track.Source.Camera]);
@@ -63,27 +65,30 @@ export function Video() {
   }, [start]);
 
   return (
-    <div>
+    <>
       {start === false && (
-        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4">
-          <div className="text-white text-2xl">配信していません</div>
-          <div>
-            <Button variant="secondary" onClick={() => setStart(true)}>
-              配信を見る（18歳以上であることに同意します）
-            </Button>
+        <>
+          <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4">
+            <div className="text-white text-2xl">配信していません</div>
+            <div>
+              <Button variant="secondary" onClick={() => setStart(true)}>
+                配信を見る（18歳以上であることに同意します）
+              </Button>
+            </div>
+            <div className="text-white text-xs text-center leading-6">
+              上記ボタンは配信されていない状態でクリックしても意味ありません。
+              <br />
+              サーバー代が無駄にかかってしまう可能性があるので、配信開始までクリックしないでいただけますとありがたいです🙏
+              <br />
+              ※ボタンをクリックしたあと、放送開始すると
+              <span className="font-bold underline">
+                リロードせずとも再生開始
+              </span>
+              されます。
+            </div>
           </div>
-          <div className="text-white text-xs text-center leading-6">
-            上記ボタンは配信されていない状態でクリックしても意味ありません。
-            <br />
-            サーバー代が無駄にかかってしまう可能性があるので、配信開始までクリックしないでいただけますとありがたいです🙏
-            <br />
-            ※ボタンをクリックしたあと、放送開始すると
-            <span className="font-bold underline">
-              リロードせずとも再生開始
-            </span>
-            されます。
-          </div>
-        </div>
+          <VideoMetadataNoServer />
+        </>
       )}
       {start === true && token === "" && (
         <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col">
@@ -97,8 +102,9 @@ export function Video() {
           serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
         >
           <CityVideoRenderer />
+          <VideoMetadata />
         </LiveKitRoom>
       )}
-    </div>
+    </>
   );
 }
