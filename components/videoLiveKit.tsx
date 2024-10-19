@@ -21,20 +21,11 @@ function CityVideoRenderer() {
     (trackRef) => trackRef.participant.name === "obs"
   );
 
-  useEffect(() => {
-    const el = document.querySelector(".lk-participant-media-video");
-
-    // videoタグにcontrols属性を追加
-    if (el) {
-      el.setAttribute("controls", "true");
-    }
-  }, [tokyoCamTrackRef, tokyoAudioTrackRef]);
-
   return (
     <>
       {tokyoCamTrackRef && tokyoAudioTrackRef ? (
         <>
-          <VideoTrack trackRef={tokyoCamTrackRef} />
+          <VideoTrack trackRef={tokyoCamTrackRef} controls />
           <AudioTrack
             trackRef={tokyoAudioTrackRef}
             muted={false}
