@@ -93,7 +93,6 @@ export function Video() {
       {start === false && (
         <>
           <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4">
-            <div className="text-white text-2xl">配信していません</div>
             <div>
               <Button variant="secondary" onClick={() => setStart(true)}>
                 配信を見る（18歳以上であることに同意します）
@@ -101,8 +100,6 @@ export function Video() {
             </div>
             <div className="text-white text-xs text-center leading-6">
               上記ボタンは配信されていない状態でクリックしても意味ありません。
-              <br />
-              サーバー代が無駄にかかってしまう可能性があるので、配信開始までクリックしないでいただけますとありがたいです🙏
               <br />
               ※ボタンをクリックしたあと、放送開始すると
               <span className="font-bold underline">
