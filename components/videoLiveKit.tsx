@@ -39,7 +39,7 @@ function CityVideoRenderer() {
             volume={volume}
           />
 
-          <div className="mt-4 flex items-center gap-4 px-4">
+          <div className="mt-4 items-center gap-4 px-4 hidden md:flex">
             <Button variant="ghost" onClick={() => setMuted((prev) => !prev)}>
               {muted ? (
                 <VolumeOff className="h-5 w-5" />
