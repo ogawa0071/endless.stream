@@ -1,9 +1,11 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import nukitashi1 from "@/public/nukitashi-1.png";
+import nukitashi2 from "@/public/nukitashi-2.png";
 import nukitashi3 from "@/public/nukitashi-3.png";
 import nukitashi4 from "@/public/nukitashi-4.png";
-import nukitashi5WithoutComment from "@/public/nukitashi-5-without-comment.png";
 import nukitashi5 from "@/public/nukitashi-5.png";
+import nukitashi6 from "@/public/nukitashi-6.png";
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,20 +29,20 @@ function VideoCard() {
           <CardContent className="p-0">
             <div className="relative aspect-video bg-black">
               <div className="absolute inset-0 flex items-center justify-center">
-                <Image src={nukitashi5} alt="" />
+                <Image src={nukitashi6} alt="" />
               </div>
-              <div className="absolute top-2 left-2 text-white px-2 py-1 rounded text-sm bg-red-500">
-                LIVE
+              <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                4:38:20
               </div>
               <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                LIVE
+                2024/10/20 19:09
               </div>
             </div>
             <div className="p-4">
               <div className="flex items-start justify-between">
                 <div>
                   <h2 className="text-lg font-semibold line-clamp-2">
-                    ぬきたし6日目（遅延ありLIVE）
+                    ぬきたし6日目（コメント付き）
                   </h2>
                   <div className="flex items-center mt-1 space-x-2">
                     <Avatar className="w-4 h-4">
@@ -86,51 +88,6 @@ function VideoCard() {
                 <div>
                   <h2 className="text-lg font-semibold line-clamp-2">
                     ぬきたし5日目（コメント付き）
-                  </h2>
-                  <div className="flex items-center mt-1 space-x-2">
-                    <Avatar className="w-4 h-4">
-                      <AvatarImage src="/oechan.png" alt="oechan" />
-                    </Avatar>
-                    <div>
-                      <div className="flex items-center space-x-1">
-                        <span className="text-sm">oechan</span>
-                        <BadgeCheck
-                          className="w-4 h-4"
-                          fill="#9146ff"
-                          color="#ffffff"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Link>
-      </Card>
-
-      <Card className="w-full max-w-3xl mx-auto">
-        <Link href={"/nukitashi-5-without-comment"}>
-          <CardContent className="p-0">
-            <div className="relative aspect-video bg-black">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image src={nukitashi5WithoutComment} alt="" />
-              </div>
-              <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                7:12:39
-              </div>
-              <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                2024/10/19 19:25
-              </div>
-            </div>
-            <div className="p-4">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold line-clamp-2">
-                    ぬきたし5日目（コメントなし）
                   </h2>
                   <div className="flex items-center mt-1 space-x-2">
                     <Avatar className="w-4 h-4">
@@ -221,6 +178,96 @@ function VideoCard() {
                 <div>
                   <h2 className="text-lg font-semibold line-clamp-2">
                     ぬきたし3日目（コメント付き）
+                  </h2>
+                  <div className="flex items-center mt-1 space-x-2">
+                    <Avatar className="w-4 h-4">
+                      <AvatarImage src="/oechan.png" alt="oechan" />
+                    </Avatar>
+                    <div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-sm">oechan</span>
+                        <BadgeCheck
+                          className="w-4 h-4"
+                          fill="#9146ff"
+                          color="#ffffff"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Link>
+      </Card>
+
+      <Card className="w-full max-w-3xl mx-auto">
+        <Link href={"/nukitashi-2"}>
+          <CardContent className="p-0">
+            <div className="relative aspect-video bg-black">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Image src={nukitashi2} alt="" />
+              </div>
+              <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                2:46:53
+              </div>
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                2024/09/23 20:21
+              </div>
+            </div>
+            <div className="p-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold line-clamp-2">
+                    ぬきたし2日目（コメント付き）
+                  </h2>
+                  <div className="flex items-center mt-1 space-x-2">
+                    <Avatar className="w-4 h-4">
+                      <AvatarImage src="/oechan.png" alt="oechan" />
+                    </Avatar>
+                    <div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-sm">oechan</span>
+                        <BadgeCheck
+                          className="w-4 h-4"
+                          fill="#9146ff"
+                          color="#ffffff"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Link>
+      </Card>
+
+      <Card className="w-full max-w-3xl mx-auto">
+        <Link href={"/nukitashi-1"}>
+          <CardContent className="p-0">
+            <div className="relative aspect-video bg-black">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Image src={nukitashi1} alt="" />
+              </div>
+              <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                5:48:30
+              </div>
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                2024/09/22 22:53
+              </div>
+            </div>
+            <div className="p-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold line-clamp-2">
+                    ぬきたし1日目（コメント付き）
                   </h2>
                   <div className="flex items-center mt-1 space-x-2">
                     <Avatar className="w-4 h-4">
