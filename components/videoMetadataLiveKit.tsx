@@ -51,12 +51,27 @@ export function VideoMetadata() {
         <br />
         <br />
         ミラー配信先（満員時はこちらで視聴可能）:{" "}
+        <a href="/nukitashi-6" target="_blank" className="underline">
+          遅延ありエンスト
+        </a>
+        <br />
+        ミラー配信先（満員時はこちらで視聴可能）:{" "}
+        <a
+          href="https://www.twitch.tv/mosaic_mirror"
+          target="_blank"
+          className="underline"
+        >
+          おえちゃんモザイクミラー
+        </a>
+        <br />
+        ミラー配信先（満員時はこちらで視聴可能）:{" "}
         <a
           href="https://housoshitu.live/"
           target="_blank"
           className="underline"
         >
-          Open放送室
+          <span className="line-through">Open放送室</span>
+          （今日はお休み）
         </a>
         <br />
         <br />
