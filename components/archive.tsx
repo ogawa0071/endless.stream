@@ -23,6 +23,51 @@ function VideoCard() {
   return (
     <div className="gap-4 flex flex-col">
       <Card className="w-full max-w-3xl mx-auto">
+        <Link href={"/nukitashi-6"}>
+          <CardContent className="p-0">
+            <div className="relative aspect-video bg-black">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Image src={nukitashi5} alt="" />
+              </div>
+              <div className="absolute top-2 left-2 text-white px-2 py-1 rounded text-sm bg-red-500">
+                LIVE
+              </div>
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                LIVE
+              </div>
+            </div>
+            <div className="p-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-lg font-semibold line-clamp-2">
+                    ぬきたし6日目（遅延ありLIVE）
+                  </h2>
+                  <div className="flex items-center mt-1 space-x-2">
+                    <Avatar className="w-4 h-4">
+                      <AvatarImage src="/oechan.png" alt="oechan" />
+                    </Avatar>
+                    <div>
+                      <div className="flex items-center space-x-1">
+                        <span className="text-sm">oechan</span>
+                        <BadgeCheck
+                          className="w-4 h-4"
+                          fill="#9146ff"
+                          color="#ffffff"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Link>
+      </Card>
+
+      <Card className="w-full max-w-3xl mx-auto">
         <Link href={"/nukitashi-5"}>
           <CardContent className="p-0">
             <div className="relative aspect-video bg-black">
