@@ -9,7 +9,7 @@ export default function Page() {
       <Header />
       <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         <div className="flex-1 overflow-auto">
-          <Video src="https://r2.endless.stream/live/output.m3u8" />
+          <Video src="https://d3hxrfny2e2eq2.cloudfront.net/live/output.m3u8" />
           <VideoMetadata />
         </div>
       </div>
