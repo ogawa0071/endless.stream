@@ -66,7 +66,7 @@ export function VideoMetadata() {
         <br />
         ミラー配信先（満員時はこちらで視聴可能）:{" "}
         <a
-          href="https://www.twitch.tv/mosaic_mirror"
+          href="https://twitcasting.tv/mosaic_mirror/"
           target="_blank"
           className="underline"
         >
