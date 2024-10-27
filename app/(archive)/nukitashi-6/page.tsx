@@ -2,6 +2,17 @@ import { Header } from "@/components/header";
 import { Video } from "@/components/videoEmbedHls";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { BadgeCheck } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ぬきたし6日目（コメント付き） - Endless Stream（エンスト）",
+  openGraph: {
+    images: "/nukitashi-6.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
 
 export default function Page() {
   return (
@@ -9,7 +20,7 @@ export default function Page() {
       <Header />
       <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         <div className="flex-1 overflow-auto">
-          <Video src="https://r2.endless.stream/nukitashi-5-with-comment/output.m3u8" />
+          <Video src="https://r2.endless.stream/nukitashi-6/output.m3u8" />
           <VideoMetadata />
         </div>
       </div>

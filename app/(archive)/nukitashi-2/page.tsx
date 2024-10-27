@@ -2,6 +2,17 @@ import { Header } from "@/components/header";
 import { Video } from "@/components/videoEmbedHls";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { BadgeCheck } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ぬきたし2日目（コメント付き） - Endless Stream（エンスト）",
+  openGraph: {
+    images: "/nukitashi-2.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
 
 export default function Page() {
   return (
