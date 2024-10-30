@@ -1,5 +1,5 @@
 import { Header } from "@/components/header";
-import { Video } from "@/components/videoEmbedHls";
+import { Video } from "@/components/videoCloudflareStreamHls";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { BadgeCheck } from "lucide-react";
 import { Metadata } from "next";
@@ -20,7 +20,7 @@ export default function Page() {
       <Header />
       <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         <div className="flex-1 overflow-auto">
-          <Video src="https://r2.endless.stream/nukitashi-7/output.m3u8" />
+          <Video src="8a74638544559cefddd975a5c6e14c59" />
           <VideoMetadata />
         </div>
       </div>
