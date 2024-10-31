@@ -39,15 +39,6 @@ export function Ad() {
           <script
             async
             className="widget-banner-script"
-            src="https://widget-view.dmm.co.jp/js/banner_placement.js?affiliate_id=ogawa0071-001&banner_id=644_728_90"
-          ></script>
-        </div>
-        <div>
-          <ins className="widget-banner"></ins>
-          {/* eslint-disable-next-line */}
-          <script
-            async
-            className="widget-banner-script"
             src="https://widget-view.dmm.co.jp/js/banner_placement.js?affiliate_id=ogawa0071-001&banner_id=227_728_90"
           ></script>
         </div>
