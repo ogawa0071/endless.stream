@@ -1,6 +1,6 @@
 import { Ad } from "@/components/ad";
 import { Header } from "@/components/header";
-import { Video } from "@/components/videoCloudflareStreamHls";
+import { Video } from "@/components/videoVidstack";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { BadgeCheck } from "lucide-react";
 import { Metadata } from "next";
@@ -21,7 +21,7 @@ export default function Page() {
       <Header />
       <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         <div className="flex-1 overflow-auto">
-          <Video src="090eba952fa8787b2cae594755d17913" />
+          <Video src="https://r2.endless.stream/090eba952fa8787b2cae594755d17913/manifest/video.m3u8" />
           <VideoMetadata />
           <Ad />
         </div>
