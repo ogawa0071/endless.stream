@@ -1,3 +1,4 @@
+import { Ad } from "@/components/ad";
 import { Header } from "@/components/header";
 import { Video } from "@/components/videoCloudflareStreamHls";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
@@ -22,6 +23,7 @@ export default function Page() {
         <div className="flex-1 overflow-auto">
           <Video src="090eba952fa8787b2cae594755d17913" />
           <VideoMetadata />
+          <Ad />
         </div>
       </div>
     </div>
