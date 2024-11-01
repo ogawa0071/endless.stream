@@ -1,5 +1,4 @@
 import { Archive } from "@/components/archive";
-import { Chat } from "@/components/chatKick";
 import { ClientOnly } from "@/components/clientOnly";
 import { Header } from "@/components/header";
 import { Video } from "@/components/videoLiveKit";
@@ -15,9 +14,6 @@ export default function Page() {
           </ClientOnly>
           <Archive />
         </div>
-        <ClientOnly>
-          <Chat />
-        </ClientOnly>
       </div>
     </div>
   );
