@@ -9,6 +9,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isVerified, setIsVerified] = useLocalStorage("ageVerified", false);
   const router = useRouter();
   const pathname = usePathname();

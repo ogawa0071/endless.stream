@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function AgeVerification() {
   const router = useRouter();
   const [error, setError] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isVerified, setIsVerified] = useLocalStorage("ageVerified", false);
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect");
@@ -22,7 +23,7 @@ export default function AgeVerification() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="p-8 bg-white rounded-lg shadow-md max-w-md w-full">
         <h1 className="text-2xl font-bold mb-4 text-center">年齢確認</h1>
         <p className="mb-6 text-center">
