@@ -1,11 +1,17 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useIsClient, useLocalStorage } from "@uidotdev/usehooks";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-export default function AgeVerification() {
+export default function Page() {
+  const isClient = useIsClient();
+
+  return isClient && <AgeVerification />;
+}
+
+function AgeVerification() {
   const router = useRouter();
   const [error, setError] = useState("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

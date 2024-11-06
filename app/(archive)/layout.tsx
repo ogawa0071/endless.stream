@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useIsClient, useLocalStorage } from "@uidotdev/usehooks";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -9,6 +9,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isClient = useIsClient();
+
+  return isClient && <AgeVerificationCheck>{children}</AgeVerificationCheck>;
+}
+
+function AgeVerificationCheck({ children }: { children: React.ReactNode }) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isVerified, setIsVerified] = useLocalStorage("ageVerified", false);
   const router = useRouter();
