@@ -1,4 +1,3 @@
-import { Ad } from "@/components/ad";
 import { Header } from "@/components/header";
 import { Video } from "@/components/videoVidstack";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
@@ -23,7 +22,6 @@ export default function Page() {
         <div className="flex-1 overflow-auto">
           <Video src="https://r2.endless.stream/90d9359443361d74ec55dbf8572cf7d1/manifest/video.m3u8" />{" "}
           <VideoMetadata />
-          <Ad />
         </div>
       </div>
     </div>
