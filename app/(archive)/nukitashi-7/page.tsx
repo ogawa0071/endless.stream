@@ -20,7 +20,10 @@ export default function Page() {
       <Header />
       <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         <div className="flex-1 overflow-auto">
-          <Video src="https://r2.endless.stream/8a74638544559cefddd975a5c6e14c59/manifest/video.m3u8" />{" "}
+          <Video
+            src="https://r2.endless.stream/8a74638544559cefddd975a5c6e14c59/manifest/video.m3u8"
+            thumbnails="https://r2.endless.stream/8a74638544559cefddd975a5c6e14c59/thumbnails/storyboard.json"
+          />
           <VideoMetadata />
         </div>
       </div>

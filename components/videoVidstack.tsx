@@ -10,7 +10,13 @@ import "@vidstack/react/player/styles/base.css";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/plyr/theme.css";
 
-export function Video({ src }: { src: string }) {
+export function Video({
+  src,
+  thumbnails,
+}: {
+  src: string;
+  thumbnails: string;
+}) {
   const isClient = useIsClient();
 
   return (
@@ -26,7 +32,7 @@ export function Video({ src }: { src: string }) {
         }}
       >
         <MediaProvider></MediaProvider>
-        <PlyrLayout icons={plyrLayoutIcons} />
+        <PlyrLayout icons={plyrLayoutIcons} thumbnails={thumbnails} />
       </MediaPlayer>
     )
   );
