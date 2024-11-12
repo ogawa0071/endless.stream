@@ -1,14 +1,15 @@
 "use client";
 
+import "@vidstack/react/player/styles/default/theme.css";
+// Import order
+import "@vidstack/react/player/styles/default/layouts/video.css";
+
 import { useIsClient } from "@uidotdev/usehooks";
 import { MediaPlayer, MediaProvider } from "@vidstack/react";
 import {
-  PlyrLayout,
-  plyrLayoutIcons,
-} from "@vidstack/react/player/layouts/plyr";
-import "@vidstack/react/player/styles/base.css";
-import "@vidstack/react/player/styles/default/theme.css";
-import "@vidstack/react/player/styles/plyr/theme.css";
+  defaultLayoutIcons,
+  DefaultVideoLayout,
+} from "@vidstack/react/player/layouts/default";
 
 export function Video({
   src,
@@ -25,14 +26,19 @@ export function Video({
         src={src}
         viewType="video"
         streamType="on-demand"
+        crossOrigin
         playsInline
         storage={src}
         style={{
-          "--plyr-border-radius": "0",
+          "--video-border-radius": "0",
+          "--video-border": "none",
         }}
       >
         <MediaProvider></MediaProvider>
-        <PlyrLayout icons={plyrLayoutIcons} thumbnails={thumbnails} />
+        <DefaultVideoLayout
+          icons={defaultLayoutIcons}
+          thumbnails={thumbnails}
+        />
       </MediaPlayer>
     )
   );
