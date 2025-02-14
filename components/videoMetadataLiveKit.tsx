@@ -50,46 +50,22 @@ export function VideoMetadata() {
         ※18歳未満の方の視聴は禁止です。
         <br />
         <br />
-        ミラー配信先（満員時はこちらで視聴可能）:{" "}
-        <a href="/nukitashi-7" target="_blank" className="underline">
-          遅延ありエンスト
-        </a>
-        <br />
-        ミラー配信先（満員時はこちらで視聴可能）:{" "}
-        <a
-          href="https://housoshitu.live/"
-          target="_blank"
-          className="underline"
-        >
-          Open放送室
-        </a>
-        <br />
-        ミラー配信先（満員時はこちらで視聴可能）:{" "}
-        <a
-          href="https://twitcasting.tv/mosaic_mirror/"
-          target="_blank"
-          className="underline"
-        >
-          おえちゃんモザイクミラー
-        </a>
-        <br />
-        <br />
         ゲームタイトル:
-        『抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？』
+        『LingerieS / ランジェリーズ』
         <br />
         <br />
         公式サイト:{" "}
         <a
-          href="https://qruppo.com/products/nukitashi/"
+          href="https://store.steampowered.com/app/2890890/LingerieS/"
           target="_blank"
           className="underline"
         >
-          https://qruppo.com/products/nukitashi/
+          https://store.steampowered.com/app/2890890/LingerieS/
         </a>
         <br />
         Twitter:{" "}
-        <a href="https://x.com/qruppo" target="_blank" className="underline">
-          https://x.com/qruppo
+        <a href="https://x.com/inforamunegames" target="_blank" className="underline">
+          https://x.com/inforamunegames
         </a>
       </div>
     </div>
