@@ -50,8 +50,7 @@ export function VideoMetadata() {
         ※18歳未満の方の視聴は禁止です。
         <br />
         <br />
-        ゲームタイトル:
-        『LingerieS / ランジェリーズ』
+        ゲームタイトル: 『LingerieS / ランジェリーズ』
         <br />
         <br />
         公式サイト:{" "}
@@ -64,7 +63,11 @@ export function VideoMetadata() {
         </a>
         <br />
         Twitter:{" "}
-        <a href="https://x.com/inforamunegames" target="_blank" className="underline">
+        <a
+          href="https://x.com/inforamunegames"
+          target="_blank"
+          className="underline"
+        >
           https://x.com/inforamunegames
         </a>
       </div>
