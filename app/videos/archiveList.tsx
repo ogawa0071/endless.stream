@@ -1,5 +1,28 @@
 export const archiveList = [
   {
+    id: "merrybunnygarden-1",
+    title:
+      "【へべれけバニーガーデン】全キャラ攻略EDまでやるぞ！！【ネタバレ注意】",
+    thumbnailUrl: "/merrybunnygarden-1.png",
+    videoUrl: "https://r2.endless.stream/20251012.mp4",
+    storyboardUrl: "",
+    date: "2025/10/11 18:01",
+    duration: "6:40:17",
+    gameName: "へべれけ ばにーがーでん",
+    description: (
+      <>
+        公式サイト:{" "}
+        <a
+          href="https://qureate.co.jp/MerryBunnyGaren/"
+          target="_blank"
+          className="underline"
+        >
+          https://qureate.co.jp/MerryBunnyGaren/
+        </a>
+      </>
+    ),
+  },
+  {
     id: "nukitashi-7",
     title: "ぬきたし7日目（コメント付き）",
     thumbnailUrl: "/nukitashi-7.png",
