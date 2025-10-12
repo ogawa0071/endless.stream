@@ -1,6 +1,6 @@
 import { VideoMetadata as VideoMetadataNoServer } from "./videoMetadataNoServer";
 
-export function Video() {
+export function VideoEmpty() {
   return (
     <>
       <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4 max-h-[70%]">
@@ -10,7 +10,7 @@ export function Video() {
         <div className="text-white text-xs text-center leading-6 font-bold">
           アーカイブは以下からご覧いただけます。
           <br />
-          今後、いつでも誰でも放送可能な状態を目指して開発する予定です。
+          現在、次回の放送予定はありません。
         </div>
       </div>
       <VideoMetadataNoServer />
