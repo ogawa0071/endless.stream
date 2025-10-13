@@ -2,7 +2,7 @@ export const archiveList = [
   {
     id: "merrybunnygarden-1",
     title:
-      "【へべれけバニーガーデン】全キャラ攻略EDまでやるぞ！！【ネタバレ注意】",
+      "【へべれけ ばにーがーでん】全キャラ攻略EDまでやるぞ！！【ネタバレ注意】",
     thumbnailUrl: "/merrybunnygarden-1.png",
     videoUrl: "https://r2.endless.stream/20251012.mp4",
     storyboardUrl: "",
