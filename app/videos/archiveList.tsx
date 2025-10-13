@@ -4,7 +4,7 @@ export const archiveList = [
     title:
       "【へべれけ ばにーがーでん】全キャラ攻略EDまでやるぞ！！【ネタバレ注意】",
     thumbnailUrl: "/merrybunnygarden-1.png",
-    videoUrl: "https://r2.endless.stream/20251012.mp4",
+    videoUrl: "https://r2.endless.stream/20251012_.mp4",
     storyboardUrl: "",
     date: "2025/10/11 18:01",
     duration: "6:40:17",
