@@ -26,7 +26,7 @@
     "livekit-client": "^2.15.8",
     "livekit-server-sdk": "^2.14.0",
     "lucide-react": "^0.545.0",
-    "next": "16.0.0",
+    "next": "16.0.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwind-merge": "^3.3.1"
