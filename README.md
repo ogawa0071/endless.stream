@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# endless.stream
 
-## Getting Started
+[TanStack Start](https://tanstack.com/start) で構築し、[Cloudflare Workers](https://developers.cloudflare.com/workers/) にデプロイしています。
 
-First, run the development server:
+## 開発
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) で起動します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ルーティングは `src/routes/` 配下のファイルベースです。`src/routeTree.gen.ts` は `dev` / `build` 時に自動生成されます。
+- `worker-configuration.d.ts` は `bun install` 時（`cf-typegen`）に自動生成されます。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 環境変数
 
-## Learn More
+ローカルの環境変数は `.env` 1 ファイルにまとめています。`.env.example` をコピーして値を設定してください。
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| 名前                                     | 用途                                                                   | ローカル | 本番                              |
+| ---------------------------------------- | ---------------------------------------------------------------------- | -------- | --------------------------------- |
+| `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` | `/api/get-participant-token`（Worker 実行時に `process.env` から参照） | `.env`   | `bunx wrangler secret put <NAME>` |
+| `VITE_LIVEKIT_URL`                       | LiveKit の URL（**ビルド時**にバンドルへ埋め込み）                     | `.env`   | ビルド時の `.env` または環境変数  |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Worker のシークレットは `wrangler.jsonc` の `secrets.required` で宣言しています。`.env` からは宣言したキーだけが Worker に渡り、型（`worker-configuration.d.ts`）もここから生成されます。
+- `secrets.required` のシークレットが本番に設定されていないと `wrangler deploy` は失敗します。Preview には本番のシークレットが引き継がれません。新しく作られる Preview には `bunx wrangler preview base-config secret put <NAME>`、作成済みの Preview には `bunx wrangler preview secret put <NAME> --name <ブランチ名>` で設定してください（Preview のビルドは `secrets.required` を検証しないため、未設定だと実行時に API が 500 を返します）。
+- クライアントに公開されるのは `VITE_` で始まる変数だけです。
 
-## Deploy on Vercel
+## ビルド・デプロイ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+bun run build    # vite build + tsc
+bun run preview  # ビルド済み Worker をローカル（workerd）で起動
+bun run deploy   # build + wrangler deploy
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 静的ファイルは `public/` に置きます。リダイレクトは `public/_redirects`、レスポンスヘッダーは `public/_headers` で設定します（Workers Static Assets）。
+- Worker の設定は `wrangler.jsonc` にあります。

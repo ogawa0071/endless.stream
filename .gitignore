@@ -13,12 +13,15 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# build output (dist/server/.dev.vars holds the .env secrets for `vite preview`)
+/dist
 
-# production
-/build
+# tanstack start / router generator temp
+.tanstack
+
+# wrangler files
+.wrangler
+.dev.vars*
 
 # misc
 .DS_Store
@@ -32,10 +35,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-
-# vercel
-.vercel
+!.env.example
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
