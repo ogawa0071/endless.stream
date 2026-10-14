@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "endless-stream",
+  "compatibility_date": "2026-10-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "@tanstack/react-start/server-entry",
+  "observability": { "enabled": true }
+  // Enable when cutting over from Vercel (remove the apex DNS record pointing to Vercel first):
+  // "routes": [{ "pattern": "endless.stream", "custom_domain": true }]
+}

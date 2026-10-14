@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local development (`bun run dev` / `bun run preview`).
+# In production, set them with `bunx wrangler secret put <NAME>`.
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
