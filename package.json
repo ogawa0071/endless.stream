@@ -22,13 +22,13 @@
     "@vidstack/react": "^1.12.13",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
-    "date-fns": "^4.1.0",
     "livekit-client": "^2.15.8",
     "livekit-server-sdk": "^2.14.0",
     "lucide-react": "^1.57.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "shadcn": "^4.21.5"
+    "shadcn": "^4.21.5",
+    "temporal-polyfill": "^1.0.6"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.64.0",

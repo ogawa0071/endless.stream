@@ -1,5 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Header } from "@/components/header";
+import { DateTime } from "@/components/time";
 import { VideoMetadata } from "@/components/videoMetadataNoServer";
 import { Video } from "@/components/videoVidstack";
 import { archiveList } from "@/lib/archiveList";
@@ -62,7 +63,9 @@ function VideoArchiveMetadata({
   return (
     <div className="p-4 border-b md:border md:rounded-lg md:m-4 flex flex-col gap-2">
       <div className="text-lg font-bold">{archive.title}</div>
-      <div>配信日時: {archive.date}</div>
+      <div>
+        配信日時: <DateTime value={archive.date} />
+      </div>
       <div>ゲーム名: {archive.gameName}</div>
       <div className="mt-4">{archive.description}</div>
     </div>

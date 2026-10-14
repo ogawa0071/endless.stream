@@ -1,4 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { DateTime, Duration } from "@/components/time";
 import { Card, CardContent } from "@/components/ui/card";
 import { BadgeCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -40,10 +41,10 @@ function VideoCard() {
                   />
                 </div>
                 <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                  {archive.duration}
+                  <Duration value={archive.duration} />
                 </div>
                 <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
-                  {archive.date}
+                  <DateTime value={archive.date} />
                 </div>
               </div>
               <div className="p-4">

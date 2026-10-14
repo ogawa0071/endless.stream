@@ -6,8 +6,8 @@ export const archiveList = [
     thumbnailUrl: "/merrybunnygarden-1.png",
     videoUrl: "https://r2.endless.stream/merrybunnygarden-1/master.m3u8",
     storyboardUrl: "",
-    date: "2025/10/11 18:01",
-    duration: "6:40:17",
+    date: "2025-10-11T18:01:00+09:00[Asia/Tokyo]",
+    duration: "PT6H40M17S",
     gameName: "へべれけ ばにーがーでん",
     description: (
       <>
@@ -30,8 +30,8 @@ export const archiveList = [
       "https://r2.endless.stream/8a74638544559cefddd975a5c6e14c59/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/8a74638544559cefddd975a5c6e14c59/thumbnails/storyboard.json",
-    date: "2024/10/27 20:08",
-    duration: "4:37:33",
+    date: "2024-10-27T20:08:00+09:00[Asia/Tokyo]",
+    duration: "PT4H37M33S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -67,8 +67,8 @@ export const archiveList = [
       "https://r2.endless.stream/3f2aafc600692d82474611a8132bc874/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/3f2aafc600692d82474611a8132bc874/thumbnails/storyboard.json",
-    date: "2024/10/20 19:09",
-    duration: "4:38:20",
+    date: "2024-10-20T19:09:00+09:00[Asia/Tokyo]",
+    duration: "PT4H38M20S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -104,8 +104,8 @@ export const archiveList = [
       "https://r2.endless.stream/eed7fb4cffe48f5aad6a8e4c42c4346e/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/eed7fb4cffe48f5aad6a8e4c42c4346e/thumbnails/storyboard.json",
-    date: "2024/10/19 19:25",
-    duration: "7:03:04",
+    date: "2024-10-19T19:25:00+09:00[Asia/Tokyo]",
+    duration: "PT7H3M4S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -141,8 +141,8 @@ export const archiveList = [
       "https://r2.endless.stream/90d9359443361d74ec55dbf8572cf7d1/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/90d9359443361d74ec55dbf8572cf7d1/thumbnails/storyboard.json",
-    date: "2024/10/12 20:29",
-    duration: "2:39:40",
+    date: "2024-10-12T20:29:00+09:00[Asia/Tokyo]",
+    duration: "PT2H39M40S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -178,8 +178,8 @@ export const archiveList = [
       "https://r2.endless.stream/4231085ee3ccc3ac79f1858991212bfa/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/4231085ee3ccc3ac79f1858991212bfa/thumbnails/storyboard.json",
-    date: "2024/10/06 23:45",
-    duration: "1:14:49",
+    date: "2024-10-06T23:45:00+09:00[Asia/Tokyo]",
+    duration: "PT1H14M49S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -215,8 +215,8 @@ export const archiveList = [
       "https://r2.endless.stream/f09c44e837ac1600463d27a56419f824/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/f09c44e837ac1600463d27a56419f824/thumbnails/storyboard.json",
-    date: "2024/09/23 20:21",
-    duration: "2:46:53",
+    date: "2024-09-23T20:21:00+09:00[Asia/Tokyo]",
+    duration: "PT2H46M53S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
@@ -252,8 +252,8 @@ export const archiveList = [
       "https://r2.endless.stream/090eba952fa8787b2cae594755d17913/manifest/video.m3u8",
     storyboardUrl:
       "https://r2.endless.stream/090eba952fa8787b2cae594755d17913/thumbnails/storyboard.json",
-    date: "2024/09/22 22:53",
-    duration: "5:48:30",
+    date: "2024-09-22T22:53:00+09:00[Asia/Tokyo]",
+    duration: "PT5H48M30S",
     gameName:
       "抜きゲーみたいな島に住んでる貧乳（わたし）はどうすりゃいいですか？",
     description: (
