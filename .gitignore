@@ -13,7 +13,7 @@
 # testing
 /coverage
 
-# build output (vite build -> dist/client + dist/server; dist/server may contain a copy of .dev.vars)
+# build output (dist/server/.dev.vars holds the .env secrets for `vite preview`)
 /dist
 
 # tanstack start / router generator temp
@@ -22,7 +22,6 @@
 # wrangler files
 .wrangler
 .dev.vars*
-!.dev.vars.example
 
 # misc
 .DS_Store

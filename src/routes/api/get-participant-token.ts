@@ -14,7 +14,7 @@ export const Route = createFileRoute("/api/get-participant-token")({
           );
         }
 
-        // Worker secrets/vars: `wrangler secret put` in prod, `.dev.vars` locally.
+        // Worker secrets (wrangler.jsonc "secrets.required"): `.env` locally.
         // Read inside the handler, never at module top level.
         const apiKey = process.env.LIVEKIT_API_KEY;
         const apiSecret = process.env.LIVEKIT_API_SECRET;

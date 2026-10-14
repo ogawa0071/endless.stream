@@ -8,7 +8,7 @@
     "build": "vite build && tsc --noEmit",
     "preview": "vite preview",
     "deploy": "bun run build && wrangler deploy",
-    "cf-typegen": "wrangler types --env-file .dev.vars.example",
+    "cf-typegen": "wrangler types",
     "postinstall": "WRANGLER_LOG=warn bun run --silent cf-typegen",
     "lint": "eslint"
   },

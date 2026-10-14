@@ -5,6 +5,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
   "observability": { "enabled": true },
+  // Loaded from .env locally (only these keys); `wrangler secret put` in production
+  "secrets": { "required": ["LIVEKIT_API_KEY", "LIVEKIT_API_SECRET"] },
   // Required by `wrangler preview` (Workers Builds runs it for non-production branches)
   "previews": {}
   // Enable when cutting over from Vercel (remove the apex DNS record pointing to Vercel first):
