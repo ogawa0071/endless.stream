@@ -50,7 +50,9 @@ function CityVideoRenderer() {
               value={[volume]}
               max={1}
               step={0.05}
-              onValueChange={([value]) => setVolume(value)}
+              onValueChange={(value) =>
+                setVolume(typeof value === "number" ? value : value[0])
+              }
             />
             <span className="text-sm">{Math.round(volume * 100)}%</span>
           </div>
