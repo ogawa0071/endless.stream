@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "trailingComma": "es5",
+  "sortPackageJson": false,
+  "sortTailwindcss": {
+    "stylesheet": "./src/styles.css",
+    "functions": ["cn", "cva"]
+  },
+  "ignorePatterns": ["src/routeTree.gen.ts", "worker-configuration.d.ts"]
+}

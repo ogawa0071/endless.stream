@@ -7,7 +7,7 @@ import { archiveList } from "@/lib/archiveList";
 
 export function Archive() {
   return (
-    <div className="p-4 border-b md:border md:rounded-lg md:m-4">
+    <div className="border-b p-4 md:m-4 md:rounded-lg md:border">
       <div className="flex flex-col justify-between">
         <h2 className="text-xl font-bold">アーカイブ</h2>
         <VideoCard />
@@ -18,11 +18,11 @@ export function Archive() {
 
 function VideoCard() {
   return (
-    <div className="gap-4 flex flex-col">
+    <div className="flex flex-col gap-4">
       {archiveList.map((archive) => (
         <Card
           key={archive.id}
-          className="w-full max-w-3xl mx-auto py-0 overflow-hidden"
+          className="mx-auto w-full max-w-3xl overflow-hidden py-0"
         >
           <Link
             to="/videos/$id"
@@ -40,35 +40,35 @@ function VideoCard() {
                     className="absolute inset-0 h-full w-full"
                   />
                 </div>
-                <div className="absolute top-2 left-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                <div className="bg-opacity-60 absolute top-2 left-2 rounded bg-black px-2 py-1 text-sm text-white">
                   <Duration value={archive.duration} />
                 </div>
-                <div className="absolute bottom-2 right-2 bg-black bg-opacity-60 text-white px-2 py-1 rounded text-sm">
+                <div className="bg-opacity-60 absolute right-2 bottom-2 rounded bg-black px-2 py-1 text-sm text-white">
                   <DateTime value={archive.date} />
                 </div>
               </div>
               <div className="p-4">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-lg font-semibold line-clamp-2">
+                    <h2 className="line-clamp-2 text-lg font-semibold">
                       {archive.title}
                     </h2>
-                    <div className="flex items-center mt-1 space-x-2">
-                      <Avatar className="w-4 h-4">
+                    <div className="mt-1 flex items-center space-x-2">
+                      <Avatar className="h-4 w-4">
                         <AvatarImage src="/oechan.png" alt="oechan" />
                       </Avatar>
                       <div>
                         <div className="flex items-center space-x-1">
                           <span className="text-sm">oechan</span>
                           <BadgeCheck
-                            className="w-4 h-4"
+                            className="h-4 w-4"
                             fill="#9146ff"
                             color="#ffffff"
                           />
                         </div>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {archive.gameName}
                     </p>
                   </div>

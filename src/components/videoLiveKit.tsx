@@ -37,7 +37,7 @@ function CityVideoRenderer() {
             volume={volume}
           />
 
-          <div className="mt-4 items-center gap-4 px-4 hidden md:flex">
+          <div className="mt-4 hidden items-center gap-4 px-4 md:flex">
             <Button variant="ghost" onClick={() => setMuted((prev) => !prev)}>
               {muted ? (
                 <VolumeOff className="h-5 w-5" />
@@ -60,8 +60,8 @@ function CityVideoRenderer() {
           <StartAudio label="ここをクリックすると音が出ます" />
         </>
       ) : (
-        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center">
-          <span className="text-white text-2xl">配信していません</span>
+        <div className="flex aspect-video w-full items-center justify-center bg-gray-800">
+          <span className="text-2xl text-white">配信していません</span>
         </div>
       )}
     </>
@@ -75,7 +75,7 @@ export function Video() {
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       if (start) {
         try {
           const resp = await fetch(`/api/get-participant-token?room=${room}`);
@@ -93,13 +93,13 @@ export function Video() {
     <>
       {start === false && (
         <>
-          <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col gap-4">
+          <div className="flex aspect-video w-full flex-col items-center justify-center gap-4 bg-gray-800">
             <div>
               <Button variant="secondary" onClick={() => setStart(true)}>
                 配信を見る（18歳以上であることに同意します）
               </Button>
             </div>
-            <div className="text-white text-xs text-center leading-6">
+            <div className="text-center text-xs leading-6 text-white">
               上記ボタンは配信されていない状態でクリックしても意味ありません。
               <br />
               ※ボタンをクリックしたあと、放送開始すると
@@ -113,16 +113,13 @@ export function Video() {
         </>
       )}
       {start === true && token === "" && (
-        <div className="w-full aspect-video bg-gray-800 flex items-center justify-center flex-col">
-          <div className="text-white text-2xl">配信していません</div>
+        <div className="flex aspect-video w-full flex-col items-center justify-center bg-gray-800">
+          <div className="text-2xl text-white">配信していません</div>
           <div>データを取得中...</div>
         </div>
       )}
       {start === true && token !== "" && (
-        <LiveKitRoom
-          token={token}
-          serverUrl={import.meta.env.VITE_LIVEKIT_URL}
-        >
+        <LiveKitRoom token={token} serverUrl={import.meta.env.VITE_LIVEKIT_URL}>
           <CityVideoRenderer />
           <VideoMetadata />
         </LiveKitRoom>

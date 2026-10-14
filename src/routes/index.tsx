@@ -12,9 +12,9 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex h-screen flex-col bg-background">
       <Header />
-      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden md:flex-row">
         <div className="flex-1 overflow-auto">
           {/* <ClientOnly> */}
           {/* <Video /> */}

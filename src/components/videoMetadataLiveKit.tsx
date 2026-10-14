@@ -17,16 +17,16 @@ export function VideoMetadata() {
   }, [room]);
 
   return (
-    <div className="p-4 border-b md:border md:rounded-lg md:m-4">
-      <div className="flex flex-row md:items-center justify-between">
+    <div className="border-b p-4 md:m-4 md:rounded-lg md:border">
+      <div className="flex flex-row justify-between md:items-center">
         <div className="flex items-center space-x-4">
-          <Avatar className="w-12 h-12">
+          <Avatar className="h-12 w-12">
             <AvatarImage src="/oechan.png" alt="oechan" />
           </Avatar>
           <div>
             <div className="flex items-center space-x-2">
               <h2 className="text-xl font-bold">oechan</h2>
-              <BadgeCheck className="w-6 h-6" fill="#9146ff" color="#ffffff" />
+              <BadgeCheck className="h-6 w-6" fill="#9146ff" color="#ffffff" />
               {room.canPlaybackVideo === true ? (
                 <Badge variant="destructive">LIVE</Badge>
               ) : (
@@ -35,9 +35,9 @@ export function VideoMetadata() {
             </div>
           </div>
         </div>
-        <div className="flex items-center space-x-4 mt-2 md:mt-0">
+        <div className="mt-2 flex items-center space-x-4 md:mt-0">
           <div className="flex items-center space-x-1">
-            <Users className="w-4 h-4" />
+            <Users className="h-4 w-4" />
             <span className="text-sm font-medium tabular-nums">
               {numParticipants}
             </span>

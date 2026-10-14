@@ -33,7 +33,10 @@ export function Video({
         }}
       >
         <MediaProvider></MediaProvider>
-        <DefaultVideoLayout icons={defaultLayoutIcons} thumbnails={thumbnails} />
+        <DefaultVideoLayout
+          icons={defaultLayoutIcons}
+          thumbnails={thumbnails}
+        />
       </MediaPlayer>
     </ClientOnly>
   );

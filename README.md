@@ -22,10 +22,10 @@ bun run dev
 cp .env.example .env
 ```
 
-| 名前 | 用途 | ローカル | 本番 |
-| --- | --- | --- | --- |
-| `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` | `/api/get-participant-token`（Worker 実行時に `process.env` から参照） | `.env` | `bunx wrangler secret put <NAME>` |
-| `VITE_LIVEKIT_URL` | LiveKit の URL（**ビルド時**にバンドルへ埋め込み） | `.env` | ビルド時の `.env` または環境変数 |
+| 名前                                     | 用途                                                                   | ローカル | 本番                              |
+| ---------------------------------------- | ---------------------------------------------------------------------- | -------- | --------------------------------- |
+| `LIVEKIT_API_KEY` / `LIVEKIT_API_SECRET` | `/api/get-participant-token`（Worker 実行時に `process.env` から参照） | `.env`   | `bunx wrangler secret put <NAME>` |
+| `VITE_LIVEKIT_URL`                       | LiveKit の URL（**ビルド時**にバンドルへ埋め込み）                     | `.env`   | ビルド時の `.env` または環境変数  |
 
 - Worker のシークレットは `wrangler.jsonc` の `secrets.required` で宣言しています。`.env` からは宣言したキーだけが Worker に渡り、型（`worker-configuration.d.ts`）もここから生成されます。
 - `secrets.required` のシークレットが本番に設定されていないと `wrangler deploy` は失敗します。Preview には本番のシークレットが引き継がれないため、`bunx wrangler preview base-config secret put <NAME>` で設定してください。

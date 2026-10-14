@@ -38,7 +38,10 @@ export const Route = createRootRoute({
       { rel: "icon", href: "/icon.png", type: "image/png", sizes: "320x320" },
     ],
     scripts: [
-      { src: `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`, async: true },
+      {
+        src: `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`,
+        async: true,
+      },
     ],
   }),
   shellComponent: RootDocument,
@@ -48,11 +51,11 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="ja">
       <head>
         <HeadContent />
         {/* inline GA bootstrap: SSR-only, runs exactly once (not via head().scripts, which re-runs inline scripts on every client navigation) */}
-        <ScriptOnce children={GA_INIT} />
+        <ScriptOnce>{GA_INIT}</ScriptOnce>
       </head>
       <body>
         {children}

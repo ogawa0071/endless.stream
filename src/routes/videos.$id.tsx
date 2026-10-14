@@ -42,9 +42,9 @@ function VideoPage() {
   const archive = archiveList.find((a) => a.id === id)!;
 
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex h-screen flex-col bg-background">
       <Header />
-      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden md:flex-row">
         <div className="flex-1 overflow-auto">
           <Video src={archive.videoUrl} thumbnails={archive.storyboardUrl} />
           <VideoMetadata />
@@ -61,7 +61,7 @@ function VideoArchiveMetadata({
   archive: (typeof archiveList)[number];
 }) {
   return (
-    <div className="p-4 border-b md:border md:rounded-lg md:m-4 flex flex-col gap-2">
+    <div className="flex flex-col gap-2 border-b p-4 md:m-4 md:rounded-lg md:border">
       <div className="text-lg font-bold">{archive.title}</div>
       <div>
         配信日時: <DateTime value={archive.date} />

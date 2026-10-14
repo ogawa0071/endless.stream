@@ -46,9 +46,9 @@ export function AgeGate() {
   }, [router]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="p-8 bg-white rounded-lg shadow-md max-w-md w-full">
-        <h1 className="text-2xl font-bold mb-4 text-center">年齢確認</h1>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-4">
+      <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-md">
+        <h1 className="mb-4 text-center text-2xl font-bold">年齢確認</h1>
         <p className="mb-6 text-center">
           このサイトは18歳以上の方のみアクセスできます。あなたは18歳以上ですか？
         </p>
@@ -56,7 +56,7 @@ export function AgeGate() {
           <Button
             onClick={confirm}
             disabled={isPending}
-            className="bg-red-500 hover:bg-red-600 text-white"
+            className="bg-red-500 text-white hover:bg-red-600"
           >
             はい、18歳以上です
           </Button>
@@ -67,7 +67,7 @@ export function AgeGate() {
             いいえ、18歳未満です
           </Button>
         </div>
-        {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
+        {error && <p className="mt-4 text-center text-red-500">{error}</p>}
       </div>
     </div>
   );
