@@ -1,9 +1,10 @@
+import { GoogleAnalytics } from "@/components/googleAnalytics";
 import { QueryClientContext } from "@/components/queryClientContext";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://endless.stream"),
   title: "Endless Stream（エンスト）",
   twitter: {
     card: "summary",

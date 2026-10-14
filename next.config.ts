@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Next.js 16 default. vinext accepts any quality unless this is set.
+    qualities: [75],
+  },
   redirects() {
     return [
       {

@@ -1,6 +1,6 @@
 import { Header } from "@/components/header";
 import { Video } from "@/components/videoVidstack";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { archiveList } from "../archiveList";
 import { notFound } from "next/navigation";
 import { VideoMetadata } from "@/components/videoMetadataNoServer";

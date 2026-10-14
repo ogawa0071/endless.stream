@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Endless Stream
 
-## Getting Started
+[vinext](https://github.com/cloudflare/vinext)（Vite 上で動く Next.js 互換フレームワーク）で構築し、Cloudflare Workers で動かしています。`app/` は Next.js の App Router と同じ書き方です。
 
-First, run the development server:
+## 必要なもの
+
+- Node.js 22.12 以上
+- [Bun](https://bun.sh)
+
+## 開発
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) で開けます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 環境変数
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+LiveKit 用の値を `.dev.vars` に書きます（`.dev.vars.example` をコピー）。
 
-## Learn More
+| 変数                      | 用途                                                 |
+| ------------------------- | ---------------------------------------------------- |
+| `LIVEKIT_API_KEY`         | `/api/get-participant-token`（secret）               |
+| `LIVEKIT_API_SECRET`      | `/api/get-participant-token`（secret）               |
+| `NEXT_PUBLIC_LIVEKIT_URL` | LiveKit の URL。クライアント用の値はビルド時に埋め込まれます |
 
-To learn more about Next.js, take a look at the following resources:
+- `bun run start` はビルド時点の `.dev.vars` を使います。変更したら再ビルドしてください。
+- `NEXT_PUBLIC_*` はビルド時の環境変数か `.env.production` などから読み込まれます。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ビルドとローカル確認
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run build
+bun run start
+```
 
-## Deploy on Vercel
+ビルドした Worker が [http://localhost:8787](http://localhost:8787) で起動します。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## デプロイ
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+初回だけ、Cloudflare へのログインと secret の登録が必要です。
+
+```bash
+bunx wrangler login
+bunx wrangler secret put LIVEKIT_API_KEY
+bunx wrangler secret put LIVEKIT_API_SECRET
+```
+
+```bash
+bun run deploy
+```
+
+`deploy` は型チェックとビルドも行います。サムネイル（`next/image`）は Cloudflare Images（`IMAGES` バインディング）で変換されます。
