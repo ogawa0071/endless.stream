@@ -28,7 +28,7 @@ cp .env.example .env
 | `VITE_LIVEKIT_URL`                       | LiveKit の URL（**ビルド時**にバンドルへ埋め込み）                     | `.env`   | ビルド時の `.env` または環境変数  |
 
 - Worker のシークレットは `wrangler.jsonc` の `secrets.required` で宣言しています。`.env` からは宣言したキーだけが Worker に渡り、型（`worker-configuration.d.ts`）もここから生成されます。
-- `secrets.required` のシークレットが本番に設定されていないと `wrangler deploy` は失敗します。Preview には本番のシークレットが引き継がれないため、`bunx wrangler preview base-config secret put <NAME>` で設定してください。
+- `secrets.required` のシークレットが本番に設定されていないと `wrangler deploy` は失敗します。Preview には本番のシークレットが引き継がれません。新しく作られる Preview には `bunx wrangler preview base-config secret put <NAME>`、作成済みの Preview には `bunx wrangler preview secret put <NAME> --name <ブランチ名>` で設定してください（Preview のビルドは `secrets.required` を検証しないため、未設定だと実行時に API が 500 を返します）。
 - クライアントに公開されるのは `VITE_` で始まる変数だけです。
 
 ## ビルド・デプロイ

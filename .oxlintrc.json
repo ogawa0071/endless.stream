@@ -20,7 +20,6 @@
     "no-empty": "error",
     "no-fallthrough": "error",
     "no-prototype-builtins": "error",
-    "no-redeclare": "error",
     "no-regex-spaces": "error",
     "no-unexpected-multiline": "error",
     "no-var": "error",

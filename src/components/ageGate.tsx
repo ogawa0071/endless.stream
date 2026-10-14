@@ -28,7 +28,7 @@ export function AgeGate() {
   const confirm = () => startTransition(() => verify(router));
 
   useEffect(() => {
-    // The server-rendered gate may be stale (back/forward cache, other tabs)
+    // The server-rendered gate may be stale (e.g. HTML from the HTTP cache)
     if (isAgeVerified()) {
       void router.invalidate();
       return;
