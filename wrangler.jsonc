@@ -4,7 +4,22 @@
   "compatibility_date": "2026-10-14",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
-  "observability": { "enabled": true },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true,
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+    },
+    "issues": {
+      "enabled": true,
+    },
+  },
   // Loaded from .env locally (only these keys); `wrangler secret put` in production
   "secrets": { "required": ["LIVEKIT_API_KEY", "LIVEKIT_API_SECRET"] },
   // Required by `wrangler preview` (Workers Builds runs it for non-production branches)
