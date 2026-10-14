@@ -1,35 +1,19 @@
-import {
-  createFileRoute,
-  Outlet,
-  useLocation,
-  useNavigate,
-} from "@tanstack/react-router";
-import { useLocalStorage } from "@uidotdev/usehooks";
-import { useEffect, useState } from "react";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { AgeGate } from "@/components/ageGate";
+import { isAgeVerified } from "@/lib/ageVerification";
 
 export const Route = createFileRoute("/videos")({
-  // Loaders + head() still run on the server (title/OG tags, real 404),
-  // but components of this route and its children render only on the client
-  // (replaces `useIsClient()`). Do NOT use `ssr: false` here: it skips child
-  // loaders/head() on the server.
-  ssr: "data-only",
+  // Runs on the server for SSR and on the client before navigations and
+  // router.invalidate(). Hydration reuses the server's result.
+  beforeLoad: () => ({ ageVerified: isAgeVerified() }),
+  // The HTML depends on the cookie
+  headers: () => ({ "Cache-Control": "private, no-cache" }),
   component: VideosLayout,
 });
 
 function VideosLayout() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isVerified, setIsVerified] = useLocalStorage("ageVerified", false);
-  const navigate = useNavigate();
-  const pathname = useLocation({ select: (l) => l.pathname });
-  // Freeze the path at mount: useLocation() switches to the *pending* location
-  // while this layout is still mounted, which would produce ?redirect=/age-verification
-  const [from] = useState(pathname);
-
-  useEffect(() => {
-    if (!isVerified) {
-      void navigate({ to: "/age-verification", search: { redirect: from } });
-    }
-  }, [navigate, isVerified, from]);
-
-  return isVerified ? <Outlet /> : null;
+  const ageVerified = Route.useRouteContext({ select: (c) => c.ageVerified });
+  // Gate inline instead of redirecting: child loaders and head() still run,
+  // so crawlers get per-video OG tags and unknown ids still 404.
+  return ageVerified ? <Outlet /> : <AgeGate />;
 }
